@@ -1,0 +1,35 @@
+﻿<Page x:Class="WpfApp227136.Pages.AddProductPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:WpfApp227136.Pages"
+      mc:Ignorable="d" 
+      d:DesignHeight="450" d:DesignWidth="800"
+      Title="AddProductPage">
+    <Grid>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Vertical">
+                <TextBlock Text="name_product"/>
+                <TextBlock Text="article"/>
+                <TextBlock Text="min_price"/>
+                <TextBlock Text="picture"/>
+                <TextBlock Text="type_product"/>
+                <TextBlock Text="kolvo_people"/>
+                <TextBlock Text="nomer_cexa"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical">
+                <TextBox x:Name="name_productTextBox" Text="{Binding name_product}"/>
+                <TextBox x:Name="artTextBox" Text="{Binding art}"/>
+                <TextBox x:Name="min_priceTextBox" Text="{Binding min_price}"/>
+                <TextBox x:Name="pictureTextBox" Text="{Binding picture}"/>
+                <ComboBox x:Name="type_productComboBox" DisplayMemberPath="type_product" SelectedItem="{Binding name_products}"/>
+                <TextBox x:Name="kolvo_peopleTextBox" Text="{Binding kolvo_people}"/>
+                <TextBox x:Name="nomer_cexaTextBox" Text="{Binding nomer_cexa}"/>
+                <Button x:Name="SaveButton" Content="save" Click="SaveButton_Click"/>
+            </StackPanel>
+            
+        </StackPanel>
+        
+    </Grid>
+</Page>
