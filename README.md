@@ -1,2 +1,3 @@
 # DemoOchtova
-#public Nullable<decimal> min_price { get; set; } в бд поменять на decimal(10,2)
+
+# в таблице продуктов столбец min_price поменять на decimal(10,2)
