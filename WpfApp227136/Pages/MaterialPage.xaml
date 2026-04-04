@@ -19,7 +19,7 @@
         <ListBox x:Name="MaterialListBox" 
                  Grid.Row="1" 
                  HorizontalContentAlignment="Stretch"
-                 SelectionChanged="MaterialListBox_MouseClick">
+                 MouseDoubleClick="MaterialsListBox_MouseClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -38,7 +38,7 @@
                                 </TextBlock.Text>
                             </TextBlock>  
                         </StackPanel>
-                        <StackPanel Grid.Column="1">
+                        <StackPanel Grid.Column="1" Orientation="Horizontal"> 
                             <TextBlock Text ="{Binding kolvo_in_paket}"/>
                             <TextBlock>
                                 <TextBlock.Text>
@@ -49,9 +49,9 @@
                             </TextBlock>
                         </StackPanel>
                         <StackPanel Grid.Column="2">
-                            <TextBlock Text ="{Binding kolvo_on_sklad}"/>
-                            <TextBlock Text ="{Binding min_ostatok}"/>
-                            <TextBlock Text ="{Binding price}"/>
+                            <TextBlock Text ="{Binding kolvo_on_sklad, StringFormat=Количество на складе:{0}}"/>
+                            <TextBlock Text ="{Binding min_ostatok, StringFormat=Минимальный остаток:{0}}"/>
+                            <TextBlock Text ="{Binding price, StringFormat=Цена:{0}}"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>

@@ -34,7 +34,7 @@
         <ListBox x:Name="ProductsListBox" 
                  Grid.Row="1" 
                  HorizontalContentAlignment="Stretch"
-                 SelectionChanged="ProductsListBox_MouseClick">
+                 MouseDoubleClick="ProductsListBox_MouseClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>

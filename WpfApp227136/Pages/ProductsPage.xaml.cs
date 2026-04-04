@@ -162,7 +162,7 @@ namespace WpfApp227136.Pages
             NavigationService.Navigate(new AddProductPage());
         }
 
-        private void ProductsListBox_MouseClick(object sender, SelectionChangedEventArgs e)
+        private void ProductsListBox_MouseClick(object sender, MouseButtonEventArgs e)
         {
             // Редактировать может только админ (role = 1)
             if (Core.AuthUser != null && Core.AuthUser.role == 1)

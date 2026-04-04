@@ -50,7 +50,7 @@ namespace WpfApp227136.Pages
             NavigationService.Navigate(new AddMaterialPage());
         }
 
-        private void MaterialListBox_MouseClick(object sender, SelectionChangedEventArgs e)
+        private void MaterialsListBox_MouseClick(object sender, MouseButtonEventArgs e)
         {
             // Редактировать может только админ (role = 1)
             if (Core.AuthUser != null && Core.AuthUser.role == 1)
@@ -93,7 +93,7 @@ namespace WpfApp227136.Pages
             {
                 try
                 {
-                    MaterialListBox.ItemsSource = Core.Context.products.ToList();
+                    MaterialListBox.ItemsSource = Core.Context.materials.ToList();
                 }
                 catch (Exception ex)
                 {
