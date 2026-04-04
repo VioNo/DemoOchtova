@@ -19,6 +19,6 @@ namespace WpfApp227136
     }
     public partial class materials
     {
-        public bool Min0 => kolvo_on_sklad > 1;
+        public bool Min0 => kolvo_on_sklad < 1;
     }
 }
