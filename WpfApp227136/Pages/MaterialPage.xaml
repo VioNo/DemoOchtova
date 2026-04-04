@@ -6,7 +6,7 @@
       xmlns:local="clr-namespace:WpfApp227136.Pages"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="Материалы">
+      Title="Материалы" IsVisibleChanged="Page_IsVisibleChanged">
 
     <Grid>
         <Grid.RowDefinitions>
@@ -14,7 +14,12 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <ListBox x:Name="MaterialListBox" Grid.Row="1" HorizontalContentAlignment="Stretch">
+        <TextBlock Grid.Row="0" Text="МАТЕРИАЛЫ" HorizontalAlignment="Center" FontSize="24"/>
+        <TextBlock Grid.Row="0" x:Name="FIOTextBlock" HorizontalAlignment="Right"/>
+        <ListBox x:Name="MaterialListBox" 
+                 Grid.Row="1" 
+                 HorizontalContentAlignment="Stretch"
+                 SelectionChanged="MaterialListBox_MouseClick">>
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -24,12 +29,34 @@
                             <ColumnDefinition Width="*"/>
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0">
-                            <TextBlock Text ="{Binding name_material}" />
-                            <TextBlock Text ="{Binding type_materials.type_material}" />
+                            <TextBlock Text ="{Binding name_material}"/>
+                            <TextBlock Text ="{Binding type_materials.type_material}"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="1">
+                            <TextBlock Text ="{Binding kolvo_in_paket}"/>
+                            <TextBlock Text ="{Binding ed_izms.ed_izm}"/>
+                        </StackPanel>
+                        <StackPanel Grid.Column="2">
+                            <TextBlock Text ="{Binding kolvo_on_sklad}"/>
+                            <TextBlock Text ="{Binding min_ostatok}"/>
+                            <TextBlock Text ="{Binding price}"/>
                         </StackPanel>
                     </Grid>
                 </DataTemplate>
             </ListBox.ItemTemplate>
+            <ListBox.ItemContainerStyle>
+                <Style TargetType="ListBoxItem">
+                    <Style.Triggers>
+                        <DataTrigger Binding="{Binding Min0}" Value="True">
+                            <Setter Property="Background" Value="Gray"/>
+                        </DataTrigger>
+                    </Style.Triggers>
+                </Style>
+            </ListBox.ItemContainerStyle>
         </ListBox>
+        <StackPanel x:Name="MaterialStackPanel" Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" >
+            <Button x:Name="AddButton" Content="Добавить материал" Click="AddButton_Click"/>
+            <Button x:Name="DelButton" Content="Удалить" Click="DelButton_Click"/>
+        </StackPanel>
     </Grid>
 </Page>

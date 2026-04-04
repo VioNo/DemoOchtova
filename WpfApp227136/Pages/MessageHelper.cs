@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 
-namespace Aleshin.Helpers
+namespace WpfApp227136.Pages
 {
     public class MessageHelper
     {
