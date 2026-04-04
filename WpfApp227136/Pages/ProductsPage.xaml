@@ -26,7 +26,7 @@
                 <ComboBoxItem>По возрастанию</ComboBoxItem>
                 <ComboBoxItem>По убыванию</ComboBoxItem>
             </ComboBox>
-            <ComboBox x:Name="ProductTypeComboBox"
+            <ComboBox x:Name="ProductTypeComboBox" Width="200" SelectedIndex="0"
                       DisplayMemberPath="type_product" 
                       SelectionChanged="ProductTypeComboBox_SelectionChanged"/>
         </StackPanel>
@@ -43,7 +43,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="80"/>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Width="200" Height="300">
+                        <Image Grid.Column="0" Width="70" Height="50">
                             <Image.Source>
                                 <Binding Path="picture">
                                     <Binding.TargetNullValue>
@@ -71,7 +71,7 @@
             <ListBox.ItemContainerStyle>
                 <Style TargetType="ListBoxItem">
                     <Style.Triggers>
-                        <DataTrigger Binding="{Binding IsGreatThen10k}" Value="True">
+                        <DataTrigger Binding="{Binding IsGreatThen10K}" Value="True">
                             <Setter Property="Background" Value="#BB5FCA"/>
                         </DataTrigger>
                     </Style.Triggers>

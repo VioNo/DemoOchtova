@@ -26,7 +26,4 @@
         <!--<Setter Property="Background" Value="#A163F5"/>-->
     </Style>
 
-    <Style TargetType="Grid">
-        <Setter Property="Background" Value="AntiqueWhite"/>
-    </Style>
 </ResourceDictionary>

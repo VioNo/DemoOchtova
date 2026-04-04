@@ -19,7 +19,7 @@
         <ListBox x:Name="MaterialListBox" 
                  Grid.Row="1" 
                  HorizontalContentAlignment="Stretch"
-                 SelectionChanged="MaterialListBox_MouseClick">>
+                 SelectionChanged="MaterialListBox_MouseClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
