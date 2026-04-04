@@ -32,7 +32,9 @@
                             <TextBlock Text ="{Binding name_material}"/>
                             <TextBlock>
                                 <TextBlock.Text>
-                                    <Binding Path="type_materials.type_material"/>
+                                    <MultiBinding>
+                                        <Binding Path="type_materials.type_material"/>
+                                    </MultiBinding>
                                 </TextBlock.Text>
                             </TextBlock>  
                         </StackPanel>
@@ -40,7 +42,9 @@
                             <TextBlock Text ="{Binding kolvo_in_paket}"/>
                             <TextBlock>
                                 <TextBlock.Text>
-                                    <Binding Path="ed_izms.ed_izm"/>
+                                    <MultiBinding>
+                                        <Binding Path="ed_izms.ed_izm"/>
+                                    </MultiBinding>
                                 </TextBlock.Text>
                             </TextBlock>
                         </StackPanel>
