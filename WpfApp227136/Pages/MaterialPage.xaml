@@ -30,11 +30,19 @@
                         </Grid.ColumnDefinitions>
                         <StackPanel Grid.Column="0">
                             <TextBlock Text ="{Binding name_material}"/>
-                            <TextBlock Text ="{Binding type_materials.type_material}"/>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <Binding Path="type_materials.type_material}"/>
+                                </TextBlock.Text>
+                            </TextBlock>  
                         </StackPanel>
                         <StackPanel Grid.Column="1">
                             <TextBlock Text ="{Binding kolvo_in_paket}"/>
-                            <TextBlock Text ="{Binding ed_izms.ed_izm}"/>
+                            <TextBlock>
+                                <TextBlock.Text>
+                                    <Binding Path="ed_izms.ed_izm"/>
+                                </TextBlock.Text>
+                            </TextBlock>
                         </StackPanel>
                         <StackPanel Grid.Column="2">
                             <TextBlock Text ="{Binding kolvo_on_sklad}"/>
