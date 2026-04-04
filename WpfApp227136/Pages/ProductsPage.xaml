@@ -30,9 +30,11 @@
                       DisplayMemberPath="type_product" 
                       SelectionChanged="ProductTypeComboBox_SelectionChanged"/>
         </StackPanel>
+        <TextBlock x:Name="FIOTextBlock" Grid.Row="0" HorizontalAlignment="Right"/>
         <ListBox x:Name="ProductsListBox" 
                  Grid.Row="1" 
-                 HorizontalContentAlignment="Stretch">
+                 HorizontalContentAlignment="Stretch"
+                 SelectionChanged="ProductsListBox_MouseClick">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -41,7 +43,7 @@
                             <ColumnDefinition Width="*"/>
                             <ColumnDefinition Width="80"/>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0">
+                        <Image Grid.Column="0" Width="200" Height="300">
                             <Image.Source>
                                 <Binding Path="picture">
                                     <Binding.TargetNullValue>
@@ -76,12 +78,11 @@
                 </Style>
             </ListBox.ItemContainerStyle>
         </ListBox>
-        <StackPanel Orientation="Horizontal" Grid.Row="2">
+        <StackPanel Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center">
             <Button x:Name="MaterialButton"
                 Content="Материалы"
                 Click="MaterialButton_Click"/>
-            <Button x:Name="AddButton" Content="Добавить" Click="AddButton_Click"/>
-            <Button x:Name="UpdateButton" Content="Редактировать" Click="UpdateButton_Click"/>
+            <Button x:Name="AddButton" Content="Добавить продукцию" Click="AddButton_Click"/>
             <Button x:Name="DelButton" Content="Удалить" Click="DelButton_Click"/>
         </StackPanel>
     </Grid>

@@ -17,4 +17,8 @@ namespace WpfApp227136
         public string Materials => string.Join(", ", product_material.Select(pm => pm.materials.name_material));
 
     }
+    public partial class materials
+    {
+        public bool Min0 => kolvo_on_sklad > 1;
+    }
 }

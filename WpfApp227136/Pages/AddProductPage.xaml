@@ -17,6 +17,7 @@
                 <TextBlock Text="type_product"/>
                 <TextBlock Text="kolvo_people"/>
                 <TextBlock Text="nomer_cexa"/>
+                <TextBlock x:Name="Id_productTextBlock"/>
             </StackPanel>
             <StackPanel Orientation="Vertical">
                 <TextBox x:Name="name_productTextBox" Text="{Binding name_product}"/>

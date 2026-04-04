@@ -22,7 +22,7 @@ namespace WpfApp227136
         public int id { get; set; }
         public string name_product { get; set; }
         public Nullable<int> art { get; set; }
-        public Nullable<int> min_price { get; set; }
+        public Nullable<decimal> min_price { get; set; }
         public string picture { get; set; }
         public Nullable<int> type_product { get; set; }
         public Nullable<int> kolvo_people { get; set; }
