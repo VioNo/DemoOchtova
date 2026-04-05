@@ -8,29 +8,45 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="AddProductPage">
     <Grid>
-        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center">
-            <StackPanel Orientation="Vertical">
-                <TextBlock Text="name_product"/>
-                <TextBlock Text="article"/>
-                <TextBlock Text="min_price"/>
-                <TextBlock Text="picture"/>
-                <TextBlock Text="type_product"/>
-                <TextBlock Text="kolvo_people"/>
-                <TextBlock Text="nomer_cexa"/>
-                <TextBlock x:Name="Id_productTextBlock"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="13*"/>
+            <RowDefinition Height="5*"/>
+        </Grid.RowDefinitions>
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0"  >
+            <StackPanel Orientation="Vertical" Margin="5">
+                <TextBlock Text="Id продукта"/>
+                <TextBlock Text="название продукта"/>
+                <TextBlock Text="артикль"/>
+                <TextBlock Text="минимальная цена"/>
+
+                <TextBlock Text="тип продукта"/>
+                <TextBlock Text="количество людей"/>
+                <TextBlock Text="номер цеха"/>
+                <TextBlock Text="картинка"/>
             </StackPanel>
-            <StackPanel Orientation="Vertical">
-                <TextBox x:Name="name_productTextBox" Text="{Binding name_product}"/>
-                <TextBox x:Name="artTextBox" Text="{Binding art}"/>
-                <TextBox x:Name="min_priceTextBox" Text="{Binding min_price}"/>
-                <TextBox x:Name="pictureTextBox" Text="{Binding picture}"/>
-                <ComboBox x:Name="type_productComboBox" DisplayMemberPath="type_product" SelectedItem="{Binding name_products}"/>
-                <TextBox x:Name="kolvo_peopleTextBox" Text="{Binding kolvo_people}"/>
-                <TextBox x:Name="nomer_cexaTextBox" Text="{Binding nomer_cexa}"/>
-                <Button x:Name="SaveButton" Content="save" Click="SaveButton_Click"/>
+            <StackPanel Orientation="Vertical" Margin="5">
+                <TextBlock x:Name="Id_productTextBlock" Width="180"/>
+                <TextBox x:Name="name_productTextBox" Width="200" Text="{Binding name_product}"/>
+                <TextBox x:Name="artTextBox" Width="200" Text="{Binding art}"/>
+                <TextBox x:Name="min_priceTextBox" Width="200" Text="{Binding min_price}"/>
+
+                <ComboBox x:Name="type_productComboBox" Width="200" DisplayMemberPath="type_product"/>
+                <TextBox x:Name="kolvo_peopleTextBox" Width="200" Text="{Binding kolvo_people}"/>
+                <TextBox x:Name="nomer_cexaTextBox" Width="200" Text="{Binding nomer_cexa}"/>
+
+                <StackPanel Orientation="Horizontal">
+                    <Image Width="70" Height="50" x:Name="pictureImage">
+                        <Image.Source>
+                            <Binding Path="picture">
+                                <Binding.TargetNullValue>
+                                    <ImageSource>../Resourses/Восьмерка.png</ImageSource>
+                                </Binding.TargetNullValue>
+                            </Binding>
+                        </Image.Source>
+                    </Image>
+                </StackPanel>
             </StackPanel>
-            
         </StackPanel>
-        
+        <Button x:Name="SaveButton" Content="сохранить" Width="200" Height="30" Click="SaveButton_Click" VerticalAlignment="Top" Grid.Row="1"/>
     </Grid>
 </Page>

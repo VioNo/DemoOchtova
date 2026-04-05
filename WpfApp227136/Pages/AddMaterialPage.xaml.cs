@@ -88,7 +88,7 @@ namespace WpfApp227136.Pages
                     CurrentMaterial = new materials
                     {
                         name_material = name_materialTextBox.Text,
-                        type_materials = type_materialComboBox.SelectedItem as type_materials,
+                        type_material = type_materialComboBox.SelectedIndex + 1, //поменять на использование SelectedItem as и в начале добавить s
                         kolvo_in_paket = Convert.ToInt32(kolvo_in_paketTextBox.Text),
                         ed_izms = ed_izmComboBox.SelectedItem as ed_izms,
                         kolvo_on_sklad = Convert.ToInt32(kolvo_on_skladTextBox.Text),

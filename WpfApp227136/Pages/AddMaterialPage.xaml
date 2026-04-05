@@ -15,16 +15,16 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0" >
             <StackPanel>
-                <TextBlock Text="name_material" Margin="6"/>
-                <TextBlock Text="type_material" Margin="6"/>
-                <TextBlock Text="kolvo_in_paket" Margin="6"/>
-                <TextBlock Text="ed_izm" Margin="6"/>
-                <TextBlock Text="kolvo_on_sklad" Margin="6,10,6,6"/>
-                <TextBlock Text="min_ostatok" Margin="6"/>
-                <TextBlock Text="price" Margin="6"/>
+                <TextBlock Text="название материал" Margin="6"/>
+                <TextBlock Text="тип материал" Margin="6"/>
+                <TextBlock Text="количество в пакете" Margin="6"/>
+                <TextBlock Text="единица измерения" Margin="6"/>
+                <TextBlock Text="количество на складе" Margin="6,10,6,6"/>
+                <TextBlock Text="минимальный остаток" Margin="6"/>
+                <TextBlock Text="цена" Margin="6"/>
             </StackPanel>
             <StackPanel>
-                <TextBox x:Name="name_materialTextBox"/>
+                <TextBox x:Name="name_materialTextBox" Width="180"/>
                 <ComboBox x:Name="type_materialComboBox" DisplayMemberPath="type_material" SelectedItem="{Binding name_material}"/>
                 <TextBox x:Name="kolvo_in_paketTextBox"/>
                 <ComboBox x:Name="ed_izmComboBox" DisplayMemberPath="ed_izm" SelectedItem="{Binding name_material}"/>
@@ -33,6 +33,6 @@
                 <TextBox x:Name="priceTextBox"/>
             </StackPanel>
         </StackPanel>
-        <Button x:Name="SaveButton" Content="save" Click="SaveButton_Click" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
+        <Button x:Name="SaveButton" Content="сохранить" Click="SaveButton_Click" Grid.Row="1" HorizontalAlignment="Center" VerticalAlignment="Top"/>
     </Grid>
 </Page>

@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -22,6 +23,7 @@ namespace WpfApp227136.Pages
     {
         private MessageHelper _messageHelper = new MessageHelper();
         public products CurrentProduct { get; set; }
+
         public AddProductPage()
         {
             InitializeComponent();
@@ -36,6 +38,7 @@ namespace WpfApp227136.Pages
             }
             DataContext = CurrentProduct;
         }
+
         public AddProductPage(products Product)
         {
             InitializeComponent();
@@ -51,6 +54,7 @@ namespace WpfApp227136.Pages
             DataContext = CurrentProduct;
             LoadProduct();
         }
+
         public void LoadProduct()
         {
             Id_productTextBlock.Text = Convert.ToString(CurrentProduct.id);
@@ -60,6 +64,22 @@ namespace WpfApp227136.Pages
             kolvo_peopleTextBox.Text = Convert.ToString(CurrentProduct.kolvo_people);
             nomer_cexaTextBox.Text = Convert.ToString(CurrentProduct.nomer_cexa);
             type_productComboBox.SelectedIndex = Convert.ToInt32(CurrentProduct.type_product) - 1;
+
+            if (!string.IsNullOrWhiteSpace(CurrentProduct.picture))
+            {
+                try
+                {
+                    string imagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, CurrentProduct.picture);
+                    if (File.Exists(imagePath))
+                    {
+                        pictureImage.Source = new BitmapImage(new Uri(imagePath, UriKind.Absolute));
+                    }
+                }
+                catch (Exception ex)
+                {
+                    _messageHelper.ShowError($"Ошибка при загрузке изображения: {ex.Message}");
+                }
+            }
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
@@ -74,9 +94,10 @@ namespace WpfApp227136.Pages
                 _messageHelper.ShowWarning("Укажите все данные");
                 return;
             }
-            else if(Convert.ToDecimal(min_priceTextBox.Text) > 0 || Convert.ToInt32(kolvo_peopleTextBox.Text) > 0)
+            else if (Convert.ToDecimal(min_priceTextBox.Text) <= 0 || Convert.ToInt32(kolvo_peopleTextBox.Text) <= 0)
             {
-                _messageHelper.ShowError("Стоимость продукции и/или количество человек для производства продукции должно быть больше 0!");
+                _messageHelper.ShowError("Стоимость продукции и количество человек для производства продукции должны быть больше 0!");
+                return;
             }
             try
             {
@@ -99,7 +120,7 @@ namespace WpfApp227136.Pages
                 {
                     CurrentProduct.name_product = name_productTextBox.Text;
                     CurrentProduct.art = Convert.ToInt32(artTextBox.Text);
-                    CurrentProduct.min_price = Convert.ToInt32(min_priceTextBox.Text);
+                    CurrentProduct.min_price = Convert.ToDecimal(min_priceTextBox.Text);
                     CurrentProduct.kolvo_people = Convert.ToInt32(kolvo_peopleTextBox.Text);
                     CurrentProduct.nomer_cexa = Convert.ToInt32(nomer_cexaTextBox.Text);
                     CurrentProduct.type_products = type_productComboBox.SelectedItem as type_products;
