@@ -15,7 +15,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="auto"/>
         </Grid.RowDefinitions>
-        <StackPanel Orientation="Horizontal" Grid.Row="0">
+        
             <StackPanel x:Name="ProductStackPanel" Orientation="Horizontal" HorizontalAlignment="Left">
                 <TextBox x:Name="SearchTextBox" MinWidth="100" 
                          TextChanged="SearchTextBox_TextChanged"/>
@@ -30,10 +30,10 @@
                           DisplayMemberPath="type_product"/>
             </StackPanel>
             <StackPanel x:Name="FIOStackPanel" Orientation="Horizontal" HorizontalAlignment="Right">
-                <TextBlock Text="                      ФИО"/>
+                <TextBlock Text="ФИО: "/>
                 <TextBlock x:Name="FIOTextBlock" Grid.Row="0"/>
             </StackPanel>
-        </StackPanel>
+
         <ListBox x:Name="ProductsListBox" 
                  Grid.Row="1" 
                  HorizontalContentAlignment="Stretch"
@@ -43,7 +43,7 @@
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="350"/>
+                            <ColumnDefinition MinWidth="350"/>
                             <ColumnDefinition Width="80"/>
                         </Grid.ColumnDefinitions>
                         <Image Grid.Column="0" Width="70" Height="50">
