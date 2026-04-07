@@ -8,7 +8,7 @@
         <EntityTypeShape EntityType="demoModel.ed_izms" Width="1.5" PointX="0.75" PointY="1.75" IsExpanded="true" />
         <EntityTypeShape EntityType="demoModel.materials" Width="1.5" PointX="3" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="demoModel.product_material" Width="1.5" PointX="5.25" PointY="1.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="demoModel.products" Width="1.5" PointX="3" PointY="9.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="demoModel.products" Width="1.5" PointX="5.125" PointY="8.875" IsExpanded="true" />
         <EntityTypeShape EntityType="demoModel.roles" Width="1.5" PointX="2.75" PointY="6.25" IsExpanded="true" />
         <EntityTypeShape EntityType="demoModel.type_materials" Width="1.5" PointX="0.75" PointY="5.75" IsExpanded="true" />
         <EntityTypeShape EntityType="demoModel.type_products" Width="1.5" PointX="0.75" PointY="9.75" IsExpanded="true" />

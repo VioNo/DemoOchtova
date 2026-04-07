@@ -12,6 +12,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <Image Source="/Resourses/Восьмерка.ico" Grid.Row="0" HorizontalAlignment="Left"/>
+        <Button Content="Домой" Grid.Row="0" HorizontalAlignment="Right" Click="ButtonHome_Click" Margin="0,0,80,0"/>
         <Button Content="Назад" Grid.Row="0" HorizontalAlignment="Right" Click="Button_Click"/>
         <Frame x:Name="Main" NavigationUIVisibility="Hidden" Grid.Row="1"/>
     </Grid>

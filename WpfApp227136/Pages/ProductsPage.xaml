@@ -40,7 +40,7 @@
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="100"/>
-                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="350"/>
                             <ColumnDefinition Width="80"/>
                         </Grid.ColumnDefinitions>
                         <Image Grid.Column="0" Width="70" Height="50">

@@ -14,7 +14,7 @@
         </Grid.RowDefinitions>
         <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Grid.Row="0"  >
             <StackPanel Orientation="Vertical" Margin="5">
-                <TextBlock Text="Id продукта"/>
+                <TextBlock x:Name="Id_productTextBlock2" Text="Id продукта"/>
                 <TextBlock Text="название продукта"/>
                 <TextBlock Text="артикль"/>
                 <TextBlock Text="минимальная цена"/>
@@ -44,6 +44,7 @@
                             </Binding>
                         </Image.Source>
                     </Image>
+                    <Button x:Name="imageButton" Content="Выберете картинку" Click="imageButton_Click"/>
                 </StackPanel>
             </StackPanel>
         </StackPanel>

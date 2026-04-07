@@ -33,5 +33,10 @@ namespace WpfApp227136
                 Main.GoBack();
             }
         }
+
+        private void ButtonHome_Click(object sender, RoutedEventArgs e)
+        {
+            Main.Content = new Pages.AuthPage();
+        }
     }
 }
