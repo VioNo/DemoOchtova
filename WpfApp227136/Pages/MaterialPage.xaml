@@ -18,8 +18,7 @@
         <TextBlock Grid.Row="0" x:Name="FIOTextBlock" HorizontalAlignment="Right"/>
         <ListBox x:Name="MaterialListBox" 
                  Grid.Row="1" 
-                 HorizontalContentAlignment="Stretch"
-                 MouseDoubleClick="MaterialsListBox_MouseClick">
+                 HorizontalContentAlignment="Stretch">
             <ListBox.ItemTemplate>
                 <DataTemplate>
                     <Grid>
@@ -68,6 +67,7 @@
         </ListBox>
         <StackPanel x:Name="MaterialStackPanel" Orientation="Horizontal" Grid.Row="2" HorizontalAlignment="Center" >
             <Button x:Name="AddButton" Content="Добавить материал" Click="AddButton_Click"/>
+            <Button x:Name="UpdateButton" Content="Редактировать" Click="UpdateButton_Click"/>
             <Button x:Name="DelButton" Content="Удалить" Click="DelButton_Click"/>
         </StackPanel>
     </Grid>

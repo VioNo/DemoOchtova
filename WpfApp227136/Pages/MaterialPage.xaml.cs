@@ -50,23 +50,6 @@ namespace WpfApp227136.Pages
             NavigationService.Navigate(new AddMaterialPage());
         }
 
-        private void MaterialsListBox_MouseClick(object sender, MouseButtonEventArgs e)
-        {
-            // Редактировать может только админ (role = 1)
-            if (Core.AuthUser != null && Core.AuthUser.role == 1)
-            {
-                if (MaterialListBox.SelectedItem is materials selectedMaterial)
-                    NavigationService.Navigate(new AddMaterialPage(selectedMaterial));
-            }
-            else
-            {
-                _messageHelper.ShowInfo("Вы не можете редактировать данные");
-            }
-
-
-            
-        }
-
         private void DelButton_Click(object sender, RoutedEventArgs e)
         {
             if (MaterialListBox.SelectedItem is materials selectedMaterial)
@@ -99,6 +82,19 @@ namespace WpfApp227136.Pages
                 {
                     _messageHelper.ShowError($"Ошибка при обновлении данных: {ex.Message}");
                 }
+            }
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (Core.AuthUser != null && Core.AuthUser.role == 1)
+            {
+                if (MaterialListBox.SelectedItem is materials selectedMaterial)
+                    NavigationService.Navigate(new AddMaterialPage(selectedMaterial));
+            }
+            else
+            {
+                _messageHelper.ShowInfo("Вы не можете редактировать данные");
             }
         }
     }

@@ -12,23 +12,12 @@ namespace WpfApp227136
     using System;
     using System.Collections.Generic;
     
-    public partial class products
+    public partial class sysdiagrams
     {
-        public products()
-        {
-            this.product_material = new HashSet<product_material>();
-        }
-    
-        public int id { get; set; }
-        public string name_product { get; set; }
-        public Nullable<int> art { get; set; }
-        public Nullable<double> min_price { get; set; }
-        public string picture { get; set; }
-        public Nullable<int> type_product { get; set; }
-        public Nullable<int> kolvo_people { get; set; }
-        public Nullable<int> nomer_cexa { get; set; }
-    
-        public virtual ICollection<product_material> product_material { get; set; }
-        public virtual type_products type_products { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

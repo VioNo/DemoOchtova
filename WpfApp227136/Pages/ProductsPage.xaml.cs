@@ -29,21 +29,12 @@ namespace WpfApp227136.Pages
         {
             InitializeComponent();
 
-            try
-            {
-                //вывод данных в листбокс
-                ProductsListBox.ItemsSource = Core.Context.products.ToList();
-
-                //вывод данных для комбобокса
-                var ProductsTypes = Core.Context.type_products.ToList();
-                ProductsTypes.Insert(0, new type_products { type_product = "Все типы продукции" });
-                ProductTypeComboBox.ItemsSource = ProductsTypes;
-            }
-            catch (Exception ex)
-            {
-                _messageHelper.ShowError($"Ошибка при загрузке данных: {ex.Message}");
-            }
-
+            ProductsListBox.ItemsSource = Core.Context.products.ToList();
+    
+            var ProductsTypes = Core.Context.type_products.ToList();
+            ProductsTypes.Insert(0, new type_products { type_product = "Все типы продукции" });
+            ProductTypeComboBox.ItemsSource = ProductsTypes;
+           
             //обработка разделения пользовательских ролей 
             if (Core.AuthUser == null)
             {
@@ -51,6 +42,8 @@ namespace WpfApp227136.Pages
                 MaterialButton.Visibility = Visibility.Collapsed;
                 AddButton.Visibility = Visibility.Collapsed;
                 DelButton.Visibility = Visibility.Collapsed;
+                UpdateButton.Visibility = Visibility.Collapsed;
+                FIOStackPanel.Visibility = Visibility.Collapsed;
                 return;
             }
             else
@@ -65,11 +58,13 @@ namespace WpfApp227136.Pages
                 case 2: //Мененджер 
                     AddButton.Visibility = Visibility.Collapsed;
                     DelButton.Visibility = Visibility.Collapsed;
+                    UpdateButton.Visibility = Visibility.Collapsed;
                     break;
                 case 3: // Агент
                     AddButton.Visibility = Visibility.Collapsed;
                     DelButton.Visibility = Visibility.Collapsed;
                     MaterialButton.Visibility = Visibility.Collapsed;
+                    UpdateButton.Visibility = Visibility.Collapsed;
                     break;
 
             }
@@ -164,16 +159,7 @@ namespace WpfApp227136.Pages
 
         private void ProductsListBox_MouseClick(object sender, MouseButtonEventArgs e)
         {
-            // Редактировать может только админ (role = 1)
-            if (Core.AuthUser != null && Core.AuthUser.role == 1)
-            {
-                if (ProductsListBox.SelectedItem is products selectedProduct)
-                    NavigationService.Navigate(new AddProductPage(selectedProduct));
-            }
-            else
-            {
-                _messageHelper.ShowInfo("Вы не можете редактировать данные");
-            }
+            
         }
 
         private void Page_IsVisibleChanged(object sender, DependencyPropertyChangedEventArgs e)
@@ -188,6 +174,20 @@ namespace WpfApp227136.Pages
                 {
                     _messageHelper.ShowError($"Ошибка при обновлении данных: {ex.Message}");
                 }
+            }
+        }
+
+        private void UpdateButton_Click(object sender, RoutedEventArgs e)
+        {
+            // Редактировать может только админ (role = 1)
+            if (Core.AuthUser != null && Core.AuthUser.role == 1)
+            {
+                if (ProductsListBox.SelectedItem is products selectedProduct)
+                    NavigationService.Navigate(new AddProductPage(selectedProduct));
+            }
+            else
+            {
+                _messageHelper.ShowInfo("Вы не можете редактировать данные");
             }
         }
     }

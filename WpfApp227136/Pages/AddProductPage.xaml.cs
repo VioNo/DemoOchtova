@@ -86,15 +86,15 @@ namespace WpfApp227136.Pages
                 _messageHelper.ShowWarning("Укажите все данные");
                 return;
             }
-            //else if (Convert.ToDecimal(min_priceTextBox.Text) <= 0m || Convert.ToInt32(kolvo_peopleTextBox.Text) <= 0)
-            //{
-            //    _messageHelper.ShowError("Стоимость продукции и количество человек для производства продукции должны быть больше 0!");
-            //    return;
-            //}
+            else if (Convert.ToDouble(min_priceTextBox.Text) <= 0 || Convert.ToInt32(kolvo_peopleTextBox.Text) <= 0)
+            {
+                _messageHelper.ShowError("Стоимость продукции и количество человек для производства продукции должны быть больше 0!");
+                return;
+            }
 
             CurrentProduct.name_product = name_productTextBox.Text;
             CurrentProduct.art = Convert.ToInt32(artTextBox.Text);
-            CurrentProduct.min_price = Convert.ToDecimal(min_priceTextBox.Text);
+            CurrentProduct.min_price = Convert.ToDouble(min_priceTextBox.Text);
             CurrentProduct.kolvo_people = Convert.ToInt32(kolvo_peopleTextBox.Text);
             CurrentProduct.nomer_cexa = Convert.ToInt32(nomer_cexaTextBox.Text);
             CurrentProduct.type_products = type_productComboBox.SelectedItem as type_products;          

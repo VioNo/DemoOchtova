@@ -25,9 +25,9 @@
             </StackPanel>
             <StackPanel>
                 <TextBox x:Name="name_materialTextBox" Width="180"/>
-                <ComboBox x:Name="type_materialComboBox" DisplayMemberPath="type_material" SelectedItem="{Binding name_material}"/>
+                <ComboBox x:Name="type_materialComboBox" DisplayMemberPath="type_material" SelectedItem="{Binding type_materials.type_material}"/>
                 <TextBox x:Name="kolvo_in_paketTextBox"/>
-                <ComboBox x:Name="ed_izmComboBox" DisplayMemberPath="ed_izm" SelectedItem="{Binding name_material}"/>
+                <ComboBox x:Name="ed_izmComboBox" DisplayMemberPath="ed_izm" SelectedItem="{Binding ed_izms.ed_izm}"/>
                 <TextBox x:Name="kolvo_on_skladTextBox"/>
                 <TextBox x:Name="min_ostatokTextBox"/>
                 <TextBox x:Name="priceTextBox"/>
