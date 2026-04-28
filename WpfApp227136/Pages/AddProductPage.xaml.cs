@@ -49,14 +49,6 @@ namespace WpfApp227136.Pages
 
         public void LoadProduct()
         {
-            //Id_productTextBlock.Text = Convert.ToString(CurrentProduct.id);
-            //name_productTextBox.Text = CurrentProduct.name_product;
-            //artTextBox.Text = Convert.ToString(CurrentProduct.art);
-            //min_priceTextBox.Text = Convert.ToString(CurrentProduct.min_price);
-            //kolvo_peopleTextBox.Text = Convert.ToString(CurrentProduct.kolvo_people);
-            //nomer_cexaTextBox.Text = Convert.ToString(CurrentProduct.nomer_cexa);
-            //type_productComboBox.SelectedIndex = Convert.ToInt32(CurrentProduct.type_product) - 1;
-
             if (!string.IsNullOrWhiteSpace(CurrentProduct.picture))
             {
                 try
@@ -94,7 +86,7 @@ namespace WpfApp227136.Pages
 
             CurrentProduct.name_product = name_productTextBox.Text;
             CurrentProduct.art = Convert.ToInt32(artTextBox.Text);
-            CurrentProduct.min_price = Convert.ToDouble(min_priceTextBox.Text);
+            CurrentProduct.min_price = Convert.ToInt32(min_priceTextBox.Text);
             CurrentProduct.kolvo_people = Convert.ToInt32(kolvo_peopleTextBox.Text);
             CurrentProduct.nomer_cexa = Convert.ToInt32(nomer_cexaTextBox.Text);
             CurrentProduct.type_products = type_productComboBox.SelectedItem as type_products;          

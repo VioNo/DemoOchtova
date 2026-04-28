@@ -10,7 +10,7 @@ namespace WpfApp227136
 {
     internal static class Core
     {
-        public static Entities Context = new Entities();
+        public static user227136Entities Context = new user227136Entities();
         public static users AuthUser = null;
     }
     public partial class products
@@ -21,9 +21,10 @@ namespace WpfApp227136
         public string ImagePath{ 
             get
             {
-                if(ImagePath != null)
-                    return Path.GetFullPath(ImagePath);
-                return null;
+                string path = $"{Environment.CurrentDirectory}{picture}";
+                if (!string.IsNullOrWhiteSpace(picture) && File.Exists(path))
+                    return path;
+                return $"{Environment.CurrentDirectory}\\Resourses\\products\\picture.png";
             }
             set 
             {
@@ -31,9 +32,10 @@ namespace WpfApp227136
                 {
                     string fileName = Path.GetFileName(value);
                     string NewPath = Path.Combine(
-                        Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "product"), fileName);
-                    File.Copy(value, NewPath, true);
-                    picture = NewPath;//"/product/" + NewPath;
+                        Path.Combine(Environment.CurrentDirectory, "Resourses\\product"), fileName);
+                    if(!File.Exists(NewPath))
+                        File.Copy(value, NewPath, true);
+                    picture = @"\Resourses\products\" + fileName;
                 }
                 catch (Exception ex) { MessageBox.Show($"{ex}"); }
             }

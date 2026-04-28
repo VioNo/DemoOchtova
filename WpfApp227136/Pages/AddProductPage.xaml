@@ -39,7 +39,7 @@
                         <Image.Source>
                             <Binding Path="picture">
                                 <Binding.TargetNullValue>
-                                    <ImageSource>../Resourses/Восьмерка.png</ImageSource>
+                                    <ImageSource>../Resourses/products/picture.png</ImageSource>
                                 </Binding.TargetNullValue>
                             </Binding>
                         </Image.Source>

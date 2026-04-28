@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище Model" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+      <Schema Namespace="Хранилище user227136Model" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="ed_izms">
           <Key>
             <PropertyRef Name="id" />
@@ -41,7 +41,7 @@
           <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="name_product" Type="nvarchar" MaxLength="255" />
           <Property Name="art" Type="int" />
-          <Property Name="min_price" Type="float" />
+          <Property Name="min_price" Type="int" />
           <Property Name="picture" Type="nvarchar" MaxLength="255" />
           <Property Name="type_product" Type="int" />
           <Property Name="kolvo_people" Type="int" />
@@ -150,7 +150,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Хранилище ModelContainer">
+        <EntityContainer Name="Хранилище user227136ModelContainer">
           <EntitySet Name="ed_izms" EntityType="Self.ed_izms" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="materials" EntityType="Self.materials" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="product_material" EntityType="Self.product_material" Schema="dbo" store:Type="Tables" />
@@ -188,7 +188,7 @@
     </edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
-      <Schema Namespace="Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+      <Schema Namespace="user227136Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
         <EntityType Name="ed_izms">
           <Key>
             <PropertyRef Name="id" />
@@ -231,7 +231,7 @@
           <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="name_product" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="art" Type="Int32" />
-          <Property Name="min_price" Type="Double" />
+          <Property Name="min_price" Type="Int32" />
           <Property Name="picture" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
           <Property Name="type_product" Type="Int32" />
           <Property Name="kolvo_people" Type="Int32" />
@@ -346,7 +346,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="Entities" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="user227136Entities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="ed_izms" EntityType="Self.ed_izms" />
           <EntitySet Name="materials" EntityType="Self.materials" />
           <EntitySet Name="product_material" EntityType="Self.product_material" />
@@ -385,9 +385,9 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="Хранилище ModelContainer" CdmEntityContainer="Entities">
+        <EntityContainerMapping StorageEntityContainer="Хранилище user227136ModelContainer" CdmEntityContainer="user227136Entities">
           <EntitySetMapping Name="ed_izms">
-            <EntityTypeMapping TypeName="Model.ed_izms">
+            <EntityTypeMapping TypeName="user227136Model.ed_izms">
               <MappingFragment StoreEntitySet="ed_izms">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="ed_izm" ColumnName="ed_izm" />
@@ -395,7 +395,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="materials">
-            <EntityTypeMapping TypeName="Model.materials">
+            <EntityTypeMapping TypeName="user227136Model.materials">
               <MappingFragment StoreEntitySet="materials">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name_material" ColumnName="name_material" />
@@ -409,7 +409,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="product_material">
-            <EntityTypeMapping TypeName="Model.product_material">
+            <EntityTypeMapping TypeName="user227136Model.product_material">
               <MappingFragment StoreEntitySet="product_material">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="id_product" ColumnName="id_product" />
@@ -419,7 +419,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="products">
-            <EntityTypeMapping TypeName="Model.products">
+            <EntityTypeMapping TypeName="user227136Model.products">
               <MappingFragment StoreEntitySet="products">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="name_product" ColumnName="name_product" />
@@ -433,7 +433,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="roles">
-            <EntityTypeMapping TypeName="Model.roles">
+            <EntityTypeMapping TypeName="user227136Model.roles">
               <MappingFragment StoreEntitySet="roles">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="role" ColumnName="role" />
@@ -441,7 +441,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="type_materials">
-            <EntityTypeMapping TypeName="Model.type_materials">
+            <EntityTypeMapping TypeName="user227136Model.type_materials">
               <MappingFragment StoreEntitySet="type_materials">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="type_material" ColumnName="type_material" />
@@ -449,7 +449,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="type_products">
-            <EntityTypeMapping TypeName="Model.type_products">
+            <EntityTypeMapping TypeName="user227136Model.type_products">
               <MappingFragment StoreEntitySet="type_products">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="type_product" ColumnName="type_product" />
@@ -457,7 +457,7 @@
             </EntityTypeMapping>
           </EntitySetMapping>
           <EntitySetMapping Name="users">
-            <EntityTypeMapping TypeName="Model.users">
+            <EntityTypeMapping TypeName="user227136Model.users">
               <MappingFragment StoreEntitySet="users">
                 <ScalarProperty Name="id" ColumnName="id" />
                 <ScalarProperty Name="fio" ColumnName="fio" />

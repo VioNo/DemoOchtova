@@ -13,10 +13,10 @@ namespace WpfApp227136
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class Entities : DbContext
+    public partial class user227136Entities : DbContext
     {
-        public Entities()
-            : base("name=Entities")
+        public user227136Entities()
+            : base("name=user227136Entities")
         {
         }
     
