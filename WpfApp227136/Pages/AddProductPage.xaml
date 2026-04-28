@@ -35,14 +35,14 @@
                 <TextBox x:Name="nomer_cexaTextBox" Width="200" Text="{Binding nomer_cexa}"/>
 
                 <StackPanel Orientation="Horizontal">
-                    <Image Width="70" Height="50" x:Name="pictureImage">
-                        <Image.Source>
+                    <Image Source="{Binding ImagePath}" Width="70" Height="50" x:Name="pictureImage">
+                        <!--<Image.Source>
                             <Binding Path="picture">
                                 <Binding.TargetNullValue>
                                     <ImageSource>../Resourses/products/picture.png</ImageSource>
                                 </Binding.TargetNullValue>
                             </Binding>
-                        </Image.Source>
+                        </Image.Source>-->
                     </Image>
                     <Button x:Name="imageButton" Content="Выберете картинку" Click="imageButton_Click"/>
                 </StackPanel>

@@ -32,7 +32,7 @@ namespace WpfApp227136
                 {
                     string fileName = Path.GetFileName(value);
                     string NewPath = Path.Combine(
-                        Path.Combine(Environment.CurrentDirectory, "Resourses\\product"), fileName);
+                        Path.Combine(Environment.CurrentDirectory, "Resourses\\products"), fileName);
                     if(!File.Exists(NewPath))
                         File.Copy(value, NewPath, true);
                     picture = @"\Resourses\products\" + fileName;

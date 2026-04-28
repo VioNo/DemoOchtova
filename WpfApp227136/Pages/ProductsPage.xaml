@@ -46,14 +46,14 @@
                             <ColumnDefinition MinWidth="350"/>
                             <ColumnDefinition Width="80"/>
                         </Grid.ColumnDefinitions>
-                        <Image Grid.Column="0" Width="70" Height="50">
-                            <Image.Source>
+                        <Image Source="{Binding ImagePath}" Grid.Column="0" Width="70" Height="50">
+                            <!--<Image.Source>
                                 <Binding Path="picture">
                                     <Binding.TargetNullValue>
                                         <ImageSource>../Resourses/products/picture.png</ImageSource>
                                     </Binding.TargetNullValue>
                                 </Binding>
-                            </Image.Source>
+                            </Image.Source>-->
                         </Image>
                         <StackPanel Grid.Column="1">
                             <TextBlock>

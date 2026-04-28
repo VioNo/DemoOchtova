@@ -74,6 +74,8 @@ namespace WpfApp227136.Pages
         {
             try
             {
+                if (PriceSortComboBox == null || SearchTextBox == null || ProductTypeComboBox == null)
+                    return;
                 var filteredProducts = Core.Context.products.ToList();
 
                 if (!string.IsNullOrWhiteSpace(SearchTextBox?.Text))

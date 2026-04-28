@@ -98,13 +98,15 @@ namespace WpfApp227136.Pages
 
         private void imageButton_Click(object sender, RoutedEventArgs e)
         {
-            string MainPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "product");
+            string MainPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "products");
 
             OpenFileDialog NewImage = new OpenFileDialog();
+            NewImage.InitialDirectory = MainPath;
             NewImage.Filter = "(*.png, *.jpg)|*.png;*.jpg";
             if (NewImage.ShowDialog() == true)
             {
                 CurrentProduct.ImagePath = NewImage.FileName;
+                pictureImage.GetBindingExpression(Image.SourceProperty).UpdateTarget();
                 _messageHelper.ShowInfo("Картинка загружена успешно");
             }
         }
