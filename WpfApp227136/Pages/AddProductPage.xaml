@@ -36,13 +36,6 @@
 
                 <StackPanel Orientation="Horizontal">
                     <Image Source="{Binding ImagePath}" Width="70" Height="50" x:Name="pictureImage">
-                        <!--<Image.Source>
-                            <Binding Path="picture">
-                                <Binding.TargetNullValue>
-                                    <ImageSource>../Resourses/products/picture.png</ImageSource>
-                                </Binding.TargetNullValue>
-                            </Binding>
-                        </Image.Source>-->
                     </Image>
                     <Button x:Name="imageButton" Content="Выберете картинку" Click="imageButton_Click"/>
                 </StackPanel>

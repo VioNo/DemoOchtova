@@ -1,10 +1,12 @@
-﻿using System;
+﻿using Microsoft.Win32;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using WpfApp227136.Pages;
 
 namespace WpfApp227136
 {
@@ -40,6 +42,26 @@ namespace WpfApp227136
                 catch (Exception ex) { MessageBox.Show($"{ex}"); }
             }
         }
+
+
+        //private void imageButton_Click(object sender, RoutedEventArgs e)
+        //{
+        //    string MainPath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, "products");
+
+        //    OpenFileDialog NewImage = new OpenFileDialog();
+        //    NewImage.InitialDirectory = MainPath;
+        //    NewImage.Filter = "(*.png, *.jpg)|*.png;*.jpg";
+        //    if (NewImage.ShowDialog() == true)
+        //    {
+        //        CurrentProduct.ImagePath = NewImage.FileName;
+        //        pictureImage.GetBindingExpression(Image.SourceProperty).UpdateTarget();
+        //        _messageHelper.ShowInfo("Картинка загружена успешно");
+        //    }
+        //}
+
+
+
+
 
     }
     public partial class materials

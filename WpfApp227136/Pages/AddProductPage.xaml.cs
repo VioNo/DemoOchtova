@@ -49,21 +49,21 @@ namespace WpfApp227136.Pages
 
         public void LoadProduct()
         {
-            if (!string.IsNullOrWhiteSpace(CurrentProduct.picture))
-            {
-                try
-                {
-                    string imagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, CurrentProduct.picture);
-                    if (File.Exists(imagePath))
-                    {
-                        pictureImage.Source = new BitmapImage(new Uri(imagePath, UriKind.Absolute));
-                    }
-                }
-                catch (Exception ex)
-                {
-                    _messageHelper.ShowError($"Ошибка при загрузке изображения: {ex.Message}");
-                }
-            }
+            //if (!string.IsNullOrWhiteSpace(CurrentProduct.picture))
+            //{
+            //    try
+            //    {
+            //        string imagePath = System.IO.Path.Combine(AppDomain.CurrentDomain.BaseDirectory, CurrentProduct.picture);
+            //        if (File.Exists(imagePath))
+            //        {
+            //            pictureImage.Source = new BitmapImage(new Uri(imagePath, UriKind.Absolute));
+            //        }
+            //    }
+            //    catch (Exception ex)
+            //    {
+            //        _messageHelper.ShowError($"Ошибка при загрузке изображения: {ex.Message}");
+            //    }
+            //}
         }
 
         private void SaveButton_Click(object sender, RoutedEventArgs e)
